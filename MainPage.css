@@ -96,6 +96,7 @@ header nav a {
 .slike {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-top: 30px;
     flex-wrap: wrap;
 }
@@ -317,6 +318,10 @@ header nav a {
   text-decoration: none; 
   color: inherit;         
 }
+.galerija-link {
+  text-decoration: none;
+  color: inherit; 
+}
 .mapa {
     width: 700px;
     height: 500px;
@@ -345,4 +350,37 @@ header nav a {
 #linkedin {
       width: 80px;
     height: 80px;
+}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5) translateY(-100px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) translateY(20px);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95) translateY(-10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+.bounce-title {
+  animation: bounceIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+footer {
+  background-color:rgb(126, 117, 117); 
+  color: white;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 14px;
+  position: relative; 
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
 }
