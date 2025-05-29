@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerija radova</title>
+  <link rel="stylesheet" href="./MainPage.css" />
+</head>
+<body>
+  <!-- Gornji meni -->
+  <header>
+   <div>
+  <a href="index.html" class="naslov-link">
+    <strong>Dizajn enterijera</strong>
+    </a>
+</div>
+    <nav>
+      <a href="./index.html#ja">O NAMA</a>
+      <a href="./index.html#gal">GALERIJA</a>
+      <a href="./index.html#ja">KONTAKT</a>
+    </nav>
+  </header>
+
+  <!-- Slajder galerija -->
+  <section class="slider-section">
+    <div class="slider-container">
+      <button class="prev">&#10094;</button>
+      <div class="slider">
+        <img src="./renderi/slika1.jpg" class="slide active" alt="Rad 1" />
+        <img src="./renderi/slika2.jpg" class="slide" alt="Rad 2" />
+        <img src="./renderi/slika3.jpg" class="slide" alt="Rad 3" />
+        <img src="./renderi/slika4.jpg" class="slide active" alt="Rad 4" />
+        <img src="./renderi/slika5.jpg" class="slide" alt="Rad 5" />
+        <img src="./renderi/slika6.jpg" class="slide" alt="Rad 6" />
+        <img src="./renderi/slika7.jpg" class="slide active" alt="Rad 7" />
+        <img src="./renderi/slika8.jpg" class="slide" alt="Rad 8" />
+        <img src="./renderi/slika9.jpg" class="slide" alt="Rad 9" />
+        <img src="./renderi/slika10.jpg" class="slide active" alt="Rad 10" />
+        <img src="./renderi/slika11.jpg" class="slide" alt="Rad 11" />
+        <img src="./renderi/slika12.jpg" class="slide" alt="Rad 12" />
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[i].classList.add('active');
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    });
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    });
+
+    // inicijalno prikaz
+    showSlide(index);
+  </script>
+</body>
+</html>
